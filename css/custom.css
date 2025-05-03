@@ -1,0 +1,316 @@
+/* 
+ * Espresso SAT - Custom CSS
+ * Author: Your Name
+ * Version: 1.0
+ */
+
+/* ======= VARIABLES ======= */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --transition-speed: 0.3s;
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 10px;
+    --shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+    --shadow-md: 0 .5rem 1rem rgba(0,0,0,.15);
+    --shadow-lg: 0 1rem 2rem rgba(0,0,0,.175);
+  }
+  
+  /* ======= GLOBAL STYLES ======= */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+  }
+  
+  body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--dark-color);
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  section {
+    padding: 5rem 0;
+  }
+  
+  /* ======= NAVBAR STYLES ======= */
+  .navbar {
+    transition: all var(--transition-speed) ease;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  
+  .nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all var(--transition-speed) ease;
+    transform: translateX(-50%);
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 80%;
+  }
+  
+  /* ======= HERO SECTION ======= */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/reparar cafetera bar.png') no-repeat center center;
+    background-size: cover;
+    filter: brightness(0.65);
+    z-index: -1;
+  }
+  
+  .hero-content {
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+  }
+  
+  .hero .display-4 {
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  .hero .lead {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero .btn-primary {
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all var(--transition-speed) ease;
+    border: none;
+  }
+  
+  .hero .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* ======= CARD STYLES ======= */
+  .card {
+    border: none;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    height: 100%;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .card-img-container {
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .card-img-top {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+  
+  /* ======= SERVICE BOX STYLES ======= */
+  .service-box {
+    background-color: white;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .icon-wrapper, .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* ======= FORM STYLES ======= */
+  .form-control {
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+  
+  .form-control:focus {
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+  }
+  
+  .form-label {
+    font-weight: 500;
+  }
+  
+  /* ======= CONTACT INFO STYLES ======= */
+  .contact-info .info-item i {
+    color: var(--primary-color);
+  }
+  
+  /* ======= UTILITIES ======= */
+  .py-6 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+  
+  /* ======= ANIMATION CLASSES ======= */
+  .fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+  }
+  
+  .slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+/* Enhanced logo styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    overflow: hidden;
+  }
+  
+  .navbar-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+  }
+  
+  /* Make logo more prominent on smaller screens */
+  @media (max-width: 576px) {
+    .logo-container {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  /* ======= RESPONSIVE ADJUSTMENTS ======= */
+  @media (max-width: 992px) {
+    .navbar .nav-link {
+      padding: 0.5rem 0;
+    }
+    
+    .hero-content h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    section {
+      padding: 4rem 0;
+    }
+    
+    .hero::before {
+      background-position: right center;
+    }
+    
+    .hero-content h1 {
+      font-size: 2.75rem;
+    }
+    
+    .card-img-container {
+      height: 200px;
+    }
+    
+    .hero .lead {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-content h1 {
+      font-size: 2.25rem;
+    }
+    
+    .hero .lead {
+      font-size: 1.1rem;
+    }
+    
+    .card-img-container {
+      height: 180px;
+    }
+    
+    .py-6 {
+      padding-top: 4rem !important;
+      padding-bottom: 4rem !important;
+    }
+  }

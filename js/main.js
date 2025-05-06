@@ -111,7 +111,7 @@ $(document).ready(function () {
 
       // Prepare template parameters to match the template variables in the image
       const templateParams = {
-        title: 'Contact Us: ' + nombre + ' ' + apellidos, // For {{title}} in subject
+        title: 'Email recibido de: ' + nombre + ' ' + apellidos + '(' + telefono + ')', // For {{title}} in subject
         name: nombre + ' ' + apellidos,                   // For {{name}} in From Name
         email: email,                                     // For {{email}} in Reply To
         telefono: telefono,                               // Keep this parameter
